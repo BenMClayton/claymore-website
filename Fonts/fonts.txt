@@ -1,3 +1,0 @@
-Montserrat (Heading Text) - http://www.google.com/fonts/specimen/Montserrat
-Lato (Content Text)    - http://www.google.com/fonts/specimen/lato
-Font Awesome (Icons)   -   http://fortawesome.github.io/Font-Awesome/ 

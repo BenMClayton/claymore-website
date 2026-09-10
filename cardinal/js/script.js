@@ -86,71 +86,17 @@ jQuery(document).ready(function($){
 
 
 	$('#maincontact_form').on('submit', function(){
-
-		var action = $(this).attr('action');
-		$("#message").slideUp(750,function() {
-		$('#message').hide();
-
- 		$('#submit_btn')
-			.after('<img src="img/AjaxLoader.gif" class="loader" />')
-			.attr('disabled','disabled');
-		
-			$.ajax({
-				url: 'contact.php',
-				type: 'POST',
-				data: {
-						contact_name: $('#contact_name').val(),
-						contact_email: $('#contact_email').val(),
-						//contact_website: $('#contact_website').val(),
-						contact_subject: $('#contact_subject').val(),
-						contact_message: $('#contact_message').val(),
-					},
-				success: function(data){
-					document.getElementById('message').innerHTML = data;
-					$('#message').slideDown('slow');
-					$('#maincontact_form img.loader').fadeOut('slow',function(){$(this).remove()});
-					$('#submit_btn').removeAttr('disabled');
-					if(data.match('success') != null) $('#maincontact_form').slideUp('slow');
-				}
-			});
-
-		});
-
+		document.getElementById('message').innerHTML =
+			'<div class="alert alert-info">This portfolio demo does not submit messages. Please use the contact details shown on the page.</div>';
+		$('#message').slideDown('slow');
 		return false;
-
 	});
 
 	$('#comments_form').on('submit', function(){
-
-		var action = $(this).attr('action');
-		$("#message1").slideUp(750,function() {
-		$('#message1').hide();
-
- 		$('#submit_btn1')
-			.after('<img src="img/AjaxLoader.gif" class="loader" />')
-			.attr('disabled','disabled');
-		
-			$.ajax({
-				url: 'contact2.php',
-				type: 'POST',
-				data: {
-					contact_name: $('#contact_name1').val(),
-					contact_email: $('#contact_email1').val(),
-					contact_message: $('#contact_message1').val(),
-				},
-				success: function(data){
-					document.getElementById('message1').innerHTML = data;
-					$('#message1').slideDown('slow');
-					$('#comments_form img.loader').fadeOut('slow',function(){$(this).remove()});
-					$('#submit_btn1').removeAttr('disabled');
-					if(data.match('success') != null) $('#comments_form').slideUp('slow');
-				}
-			});
-
-		});
-
+		document.getElementById('message1').innerHTML =
+			'<div class="alert alert-info">Comments are disabled in this static portfolio demo.</div>';
+		$('#message1').slideDown('slow');
 		return false;
-
 	});
 
 	$('#fill_form').on('submit', function(e){
